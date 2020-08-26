@@ -1,5 +1,5 @@
 # jQuery Data Update
-jQuery Data Update is a simple jQuery function which makes use of AJAX toretrieve updated elements on a HTML page.
+jQuery Data Update is a simple jQuery function which makes use of AJAX to retrieve updated elements on a HTML page.
 
 ## Usage
 ```javascript
