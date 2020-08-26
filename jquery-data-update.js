@@ -10,15 +10,6 @@ var DataUpdate = function(options) {
   //We use this variable so that we can easily call the parent from within child functions.
   var __this = this;
 
-  //Validate the user input for the options, and revert to defaults if needed.
-  options.interval = options.interval > 0 ? options.interval : 10;
-  options.debug = typeof options.debug == 'boolean' ? options.debug : false;
-  options.updateAll = typeof options.updateAll == 'boolean' ? options.updateAll : false;
-  options.ajaxMethod = typeof options.ajaxMethod == 'string' ? options.ajaxMethod : 'get';
-  options.ajaxData = typeof options.ajaxData == 'object' ? options.ajaxData : {};
-  options.success = typeof options.success == 'function' ? options.success : function(){};
-  options.error = typeof options.error == 'function' ? options.error : function(){};
-
   //Start using jQuery, only once it has loaded.
   $(document).ready(function(){
 
