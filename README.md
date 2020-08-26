@@ -2,6 +2,9 @@
 jQuery Data Update is a simple jQuery function which makes use of AJAX to retrieve updated elements on a HTML page.
 
 ## Usage
+```html
+<div data-update='time'>10:54:01</div>
+```
 ```javascript
 new DataUpdate({
   debug: false, //Debug mode?
@@ -25,14 +28,22 @@ var dataUpdate = new DataUpdate({
 });
 dataUpdate.start(); //Start updating
 ```
-
 ### Stopping Manually
 You can also choose to manually stop the updater.
 ```javascript
 var dataUpdate = new DataUpdate();
 dataUpdate.stop(); //Stop updating
 ```
-
+### Different Selectors
+I'm aware that some frameworks and plugins may also make use of the 'data-update' attribute, so you are able to specify a different one.
+```html
+<div data-autoupdate='time'>10:54:01</div>
+```
+```javascript
+new DataUpdate({
+  'dataSelector': 'autoupdate', //The script will now search for 'data-autoupdate' attributes instead.
+});
+```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
