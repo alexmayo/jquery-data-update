@@ -20,6 +20,7 @@ var DataUpdate = function(options) {
     __this.options = $.extend({
       interval: 10,
       debug: false,
+      autostart: true,
       dataSelector: 'update',
       updateAll: false,
       ajaxMethod: 'get',
@@ -60,9 +61,8 @@ var DataUpdate = function(options) {
             $.each($('[data-'+__this.options.dataSelector+']'), function(i, element) {
               let selector = '[data-'+__this.options.dataSelector+'="' + $(element).data(__this.options.dataSelector) + '"]';
               let elements = $(response).filter(selector);
-              if(elements.length > 1 && !__this.options.updateAll) {
+              if(elements.length > 1 && !__this.options.updateAll)
                 __this.warning('There are multiple elements with the same selector (' + selector + '). Only the first will be updated. If you want to update all elements with the same data attribute, simply change the updateAll option to true.');
-              }
               let content = elements.html();
               if(content && content != $(selector).html()) {
                 __this.log(selector + ' has changed and will be updated.', {oldContent: $(selector).html(), newContent: content});
@@ -97,6 +97,7 @@ var DataUpdate = function(options) {
     });
     
     //Start the timesouts as soon as the class is instantiated.
-    __this.start();
+    if(this.options.autostart)
+       __this.start();
   });
 }
