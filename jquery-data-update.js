@@ -96,8 +96,8 @@ var DataUpdate = function(options) {
       }
     });
     
-    //Start the timesouts as soon as the class is instantiated.
-    if(this.options.autostart)
+    //Start the timeouts as soon as the class is instantiated.
+    if(__this.options.autostart)
        __this.start();
   });
 }
